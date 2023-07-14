@@ -6,7 +6,7 @@
 </script>
 
 <Router {url}>
-  <nav>
+  <nav style="display:none;">
     <Link to="/">Generator Wattage Calc</Link>
   </nav>
   <div>

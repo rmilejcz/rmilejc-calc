@@ -182,7 +182,6 @@ let appliances = [
 </script>
 
 <div class="container mx-auto px-4">
-  <p class="text-center my-4 font-bold text-lg">Select the <strong>most necessary!~</strong> electrical appliances to understand your power requirements.</p>
   <section>
     <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {#each appliances as appliance (appliance.id)}
@@ -202,8 +201,8 @@ let appliances = [
       </div>
       {/each}
     </div>
-    <div class="my-4 text-center">
-      <strong class="font-bold text-2xl">Total Wattage:</strong> <span class="text-2xl">{totalWattage}</span> Watts
+    <div class="fixed bottom-4 right-4 bg-white p-4 shadow-md rounded">
+      <strong class="font-bold text-xl">Total Wattage:</strong> <span class="text-xl">{totalWattage}</span> Watts
     </div>
   </section>
 </div>
