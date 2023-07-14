@@ -201,7 +201,7 @@ let appliances = [
       </div>
       {/each}
     </div>
-    <div class="fixed bottom-4 inset-x-0 p-4 bg-white text-center shadow-md rounded mx-auto w-full max-w-md">
+    <div class="fixed bottom-4 inset-x-0 px-4 pt-4 bg-white text-center shadow-md rounded mx-auto w-full max-w-md">
       <strong class="font-bold text-xl">Total Wattage:</strong> <span class="text-xl">{totalWattage}</span> Watts
     </div>    
   </section>
