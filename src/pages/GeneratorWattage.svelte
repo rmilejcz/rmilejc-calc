@@ -182,7 +182,7 @@ let appliances = [
 </script>
 
 <div class="container mx-auto px-4">
-  <p class="text-center">Select the <strong>most necessary</strong> electrical appliances to understand your power requirements.</p>
+  <p class="text-center">Select the <strong>most necessary!~</strong> electrical appliances to understand your power requirements.</p>
   <section class="py-4">
     <div id="counters-container">
       {#each appliances as appliance (appliance.id)}
