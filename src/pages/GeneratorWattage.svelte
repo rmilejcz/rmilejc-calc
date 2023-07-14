@@ -186,20 +186,22 @@ let appliances = [
   <section>
     <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {#each appliances as appliance (appliance.id)}
-        <div class="flex justify-between items-center border rounded p-2 bg-white shadow-md">
-          <button on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
-            -
-          </button>
-          <span class="mx-2">{applianceCounters[appliance.id] || 0}</span>
-          <button on:click={() => incrementCounter(appliance.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-            +
-          </button>
-          <span class="mx-2">{appliance.alt}</span>
+        <div class="flex flex-col justify-between items-center border rounded p-2 bg-white shadow-md">
+          <span class="mb-2">{appliance.alt}</span>
+          <div class="flex justify-between w-full">
+            <button on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+              -
+            </button>
+            <span class="mx-2">{applianceCounters[appliance.id] || 0}</span>
+            <button on:click={() => incrementCounter(appliance.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+              +
+            </button>
+          </div>
         </div>
       {/each}
     </div>
-    <div class="my-4">
-      <strong class="font-bold text-lg">Total Wattage:</strong> {totalWattage} Watts
+    <div class="my-4 text-center">
+      <strong class="font-bold text-2xl">Total Wattage:</strong> <span class="text-2xl">{totalWattage}</span> Watts
     </div>
   </section>
 </div>
