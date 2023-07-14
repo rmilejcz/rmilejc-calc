@@ -189,7 +189,7 @@ let appliances = [
       <div class="flex flex-col justify-between items-center border rounded p-2 bg-white shadow-md">
         <span class="mb-2">{appliance.alt}</span>
         <div class="flex justify-center w-full">
-          <div class="flex justify-between items-center bg-gray-200 p-2 rounded max-w-xs w-full">
+          <div class="flex justify-between items-center bg-gray-200 p-2 rounded max-w-min w-full">
             <button on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
               -
             </button>
