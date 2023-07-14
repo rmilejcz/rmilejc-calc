@@ -182,20 +182,24 @@ let appliances = [
 </script>
 
 <div class="container mx-auto px-4">
-  <p class="text-center">Select the <strong>most necessary!~</strong> electrical appliances to understand your power requirements.</p>
-  <section class="py-4">
-    <div id="counters-container">
+  <p class="text-center my-4 font-bold text-lg">Select the <strong>most necessary!~</strong> electrical appliances to understand your power requirements.</p>
+  <section>
+    <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {#each appliances as appliance (appliance.id)}
-        <div>
-          <button on:click={() => decrementCounter(appliance.id)}>-</button>
-          {applianceCounters[appliance.id] || 0}
-          <button on:click={() => incrementCounter(appliance.id)}>+</button>
-          {appliance.alt}
+        <div class="flex justify-between items-center border rounded p-2 bg-white shadow-md">
+          <button on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
+            -
+          </button>
+          <span class="mx-2">{applianceCounters[appliance.id] || 0}</span>
+          <button on:click={() => incrementCounter(appliance.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+            +
+          </button>
+          <span class="mx-2">{appliance.alt}</span>
         </div>
       {/each}
     </div>
-    <div>
-      <strong>Total Wattage:</strong> {totalWattage} Watts
+    <div class="my-4">
+      <strong class="font-bold text-lg">Total Wattage:</strong> {totalWattage} Watts
     </div>
   </section>
 </div>

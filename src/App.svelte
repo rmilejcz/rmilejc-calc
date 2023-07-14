@@ -5,7 +5,6 @@
   export let url;
 </script>
 
-<!-- Routing example for svelte pages: -->
 <Router {url}>
   <nav>
     <Link to="/">Generator Wattage Calc</Link>
