@@ -941,7 +941,7 @@ $: {
 }
 </script>
 
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 pb-20 md:pb-0"> <!-- pb-20 for mobile, removed for larger screens -->
     <section>
         <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             {#each appliances as appliance (appliance.id)}
