@@ -942,28 +942,28 @@ $: {
 </script>
 
 <div class="container mx-auto px-4">
-<section>
-  <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-    {#each appliances as appliance (appliance.id)}
-    <div class="flex flex-col justify-between items-center border rounded p-2 bg-white shadow-md">
-      <span class="mb-2">{appliance.alt}</span>
-      <div class="flex justify-center w-full">
-        <div class="flex justify-between items-center bg-gray-200 p-2 rounded max-w-min w-full">
-          <button on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">
-            -
-          </button>
-          <span class="mx-2">{applianceCounters[appliance.id] || 0}</span>
-          <button on:click={() => incrementCounter(appliance.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-            +
-          </button>
+    <section>
+        <div id="counters-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+            {#each appliances as appliance (appliance.id)}
+            <article class="flex flex-col justify-between items-center border rounded p-2 bg-white shadow-md">
+               <h2 id="appliance-{appliance.id}" class="mb-2 text-lg font-bold">{appliance.alt}</h2>
+               <div class="flex justify-center w-full">
+                <div class="flex justify-between items-center bg-gray-200 p-2 rounded max-w-min w-full">
+                  <button aria-labelledby="decrement-{appliance.id} appliance-{appliance.id}" on:click={() => decrementCounter(appliance.id)} class="bg-red-500 hover:bg-red-700 focus:bg-red-800 text-white font-bold py-1 px-2 rounded transition duration-200 ease-in-out">
+                    -
+                  </button>
+                  <span id="decrement-{appliance.id}" class="mx-2">{applianceCounters[appliance.id] || 0}</span>
+                  <button aria-labelledby="increment-{appliance.id} appliance-{appliance.id}" on:click={() => incrementCounter(appliance.id)} class="bg-blue-500 hover:bg-blue-700 focus:bg-blue-800 text-white font-bold py-1 px-2 rounded transition duration-200 ease-in-out">
+                    +
+                  </button>
+                </div>
+              </div>
+            </article>
+            {/each}
         </div>
-      </div>
-    </div>
-    {/each}
-  </div>
-  <div class="fixed bottom-0 inset-x-0 p-4 bg-white text-center shadow-md rounded mx-auto w-full max-w-md">
-    <strong class="font-bold text-xl">Total Wattage:</strong> <span class="text-xl">{totalWattage}</span> Watts
-    <strong class="font-bold text-xl">Total Starting Wattage:</strong> <span class="text-xl">{totalStartingWattage}</span> Watts
-  </div>    
-</section>
+        <footer class="fixed bottom-0 inset-x-0 p-4 bg-white text-center shadow-md rounded mx-auto w-full max-w-md">
+          <p><strong id="total-wattage" class="font-bold text-xl">Total Wattage:</strong> <span class="text-xl">{totalWattage}</span> Watts</p>
+          <p><strong id="starting-wattage" class="font-bold text-xl">Total Starting Wattage:</strong> <span class="text-xl">{totalStartingWattage}</span> Watts</p>
+        </footer>    
+    </section>
 </div>
